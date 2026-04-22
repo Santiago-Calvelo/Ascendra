@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../theme/game_theme.dart';
 
 enum ZoneType { comfort, normal, growth }
@@ -83,17 +83,17 @@ class _TaskCardState extends State<TaskCard> with SingleTickerProviderStateMixin
           child: Container(
             margin: const EdgeInsets.only(bottom: 8),
             decoration: BoxDecoration(
-              color: widget.completed ? GameTheme.cardBg.withOpacity(0.4) : GameTheme.cardBg,
+              color: widget.completed ? GameTheme.cardBg.withValues(alpha: 0.4) : GameTheme.cardBg,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: widget.completed 
-                    ? zoneColor.withOpacity(0.3) 
-                    : (isGrowth ? zoneColor.withOpacity(0.5) : GameTheme.border),
+                    ? zoneColor.withValues(alpha: 0.3) 
+                    : (isGrowth ? zoneColor.withValues(alpha: 0.5) : GameTheme.border),
                 width: isGrowth ? 1.5 : 1.0,
               ),
               boxShadow: widget.completed ? [
                 BoxShadow(
-                  color: zoneColor.withOpacity(0.1),
+                  color: zoneColor.withValues(alpha: 0.1),
                   blurRadius: 10,
                   spreadRadius: -2,
                 )
@@ -111,7 +111,7 @@ class _TaskCardState extends State<TaskCard> with SingleTickerProviderStateMixin
                     child: Container(
                       width: isGrowth ? 6 : 4,
                       decoration: BoxDecoration(
-                        color: isComfort ? zoneColor.withOpacity(0.7) : zoneColor,
+                        color: isComfort ? zoneColor.withValues(alpha: 0.7) : zoneColor,
                       ),
                     ),
                   ),
@@ -127,14 +127,14 @@ class _TaskCardState extends State<TaskCard> with SingleTickerProviderStateMixin
                               width: 36,
                               height: 36,
                               decoration: BoxDecoration(
-                                color: GameTheme.background.withOpacity(0.5),
+                                color: GameTheme.background.withValues(alpha: 0.5),
                                 borderRadius: BorderRadius.circular(8),
-                                border: widget.completed ? Border.all(color: zoneColor.withOpacity(0.5)) : null,
+                                border: widget.completed ? Border.all(color: zoneColor.withValues(alpha: 0.5)) : null,
                               ),
                               child: Icon(
                                 widget.completed ? Icons.check_circle : _getActivityIcon(),
                                 size: 18,
-                                color: widget.completed ? zoneColor : GameTheme.foreground.withOpacity(0.7),
+                                color: widget.completed ? zoneColor : GameTheme.foreground.withValues(alpha: 0.7),
                               ),
                             ),
                             const SizedBox(width: 12),
@@ -210,7 +210,7 @@ class _TaskCardState extends State<TaskCard> with SingleTickerProviderStateMixin
                                                 borderRadius: BorderRadius.circular(3),
                                                 boxShadow: [
                                                   BoxShadow(
-                                                    color: zoneColor.withOpacity(0.3),
+                                                    color: zoneColor.withValues(alpha: 0.3),
                                                     blurRadius: 4,
                                                     spreadRadius: 1,
                                                   )

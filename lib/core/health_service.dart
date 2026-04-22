@@ -30,7 +30,9 @@ class HealthService {
         final durationMin = r.endTime.difference(r.startTime).inMinutes.clamp(1, 1440);
         if (r.value / durationMin <= 200) {
           stepDelta += r.value;
-          _processedIds.add(r.id);
+          if (r.id != null) {
+            _processedIds.add(r.id!);
+          }
         }
       }
 

@@ -46,6 +46,7 @@ class User {
   int xp;
   int level;
   int lifetimeTasks;
+  int lifetimeGymSets;
   int dailyXp = 0;
   DateTime lastActiveTime = DateTime.now();
   final Map<String, int> stats;
@@ -55,6 +56,7 @@ class User {
     this.xp = 0,
     this.level = 1,
     this.lifetimeTasks = 0,
+    this.lifetimeGymSets = 0,
     this.dailyXp = 0,
     DateTime? lastActiveTime,
     Map<String, int>? stats,
@@ -64,6 +66,10 @@ class User {
         lastActiveTime = lastActiveTime ?? DateTime.now();
 
   ActivityMetric getMetric(String aid) => behavior.putIfAbsent(aid, () => ActivityMetric(activityId: aid));
+
+  void recalcLevel() {
+    level = (sqrt(xp / 100)).floor() + 1;
+  }
 
   void addXP(int amount) {
     xp += amount;
@@ -85,6 +91,7 @@ class User {
     'xp': xp,
     'level': level,
     'lifetimeTasks': lifetimeTasks,
+    'lifetimeGymSets': lifetimeGymSets,
     'dailyXp': dailyXp,
     'lastActiveTime': lastActiveTime.toIso8601String(),
     'stats': stats,
@@ -95,6 +102,7 @@ class User {
     xp: json['xp'] ?? 0,
     level: json['level'] ?? 1,
     lifetimeTasks: json['lifetimeTasks'] ?? 0,
+    lifetimeGymSets: json['lifetimeGymSets'] ?? 0,
     dailyXp: json['dailyXp'] ?? 0,
     lastActiveTime: DateTime.tryParse(json['lastActiveTime'] ?? '') ?? DateTime.now(),
     stats: Map<String, int>.from(json['stats'] ?? {}),

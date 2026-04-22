@@ -1,19 +1,23 @@
+enum SetStatus { idle, active, resting, completed }
+
 class WorkoutSet {
   int reps;
   double weight;
-  bool isCompleted;
+  SetStatus status;
 
   WorkoutSet({
     required this.reps,
     required this.weight,
-    this.isCompleted = false,
+    this.status = SetStatus.idle,
   });
 
-  WorkoutSet copyWith({int? reps, double? weight, bool? isCompleted}) {
+  bool get isCompleted => status == SetStatus.completed;
+
+  WorkoutSet copyWith({int? reps, double? weight, SetStatus? status}) {
     return WorkoutSet(
       reps: reps ?? this.reps,
       weight: weight ?? this.weight,
-      isCompleted: isCompleted ?? this.isCompleted,
+      status: status ?? this.status,
     );
   }
 }

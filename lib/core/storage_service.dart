@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'game_service.dart';
+import '../models/user.dart';
 import '../models/task.dart';
 import 'mission_service.dart';
 import '../models/workout.dart';

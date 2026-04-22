@@ -9,6 +9,14 @@ class GameTheme {
   static const Color mutedForeground = Color(0xFF94A3B8);
   static const Color border = Color(0xFF334155);
 
+  static const Color zoneComfort = Color(0xFF10B981); // Emerald
+  static const Color zoneNormal = Color(0xFF8B5CF6); // Blue/Violet
+  static const Color zoneGrowth = Color(0xFFF97316); // Red/Orange
+
+  static const Color statStr = Color(0xFFEF4444); // Red
+  static const Color statEnd = Color(0xFF10B981); // Green
+  static const Color statDis = Color(0xFF3B82F6); // Blue
+
   static ThemeData get theme {
     return ThemeData.dark().copyWith(
       scaffoldBackgroundColor: background,
@@ -18,7 +26,6 @@ class GameTheme {
         primary: primary,
         secondary: accent,
         surface: cardBg,
-        background: background,
       ),
       textTheme: const TextTheme(
         headlineMedium: TextStyle(

@@ -3,6 +3,7 @@ import '../theme/game_theme.dart';
 import '../widgets/game_bottom_nav.dart';
 import '../widgets/character_header.dart';
 import '../widgets/task_card.dart';
+import 'workout/routine_builder_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -101,8 +102,8 @@ class _HomeScreenState extends State<HomeScreen> {
         );
       case GameTab.character:
         return const Center(child: Text('Character Info Screen', style: TextStyle(color: GameTheme.foreground)));
-      case GameTab.arena:
-        return const Center(child: Text('Arena / Leaderboard', style: TextStyle(color: GameTheme.foreground)));
+      case GameTab.gym:
+        return const RoutineBuilderScreen();
       case GameTab.feats:
         return const Center(child: Text('Feats / Achievements', style: TextStyle(color: GameTheme.foreground)));
     }
@@ -142,7 +143,7 @@ class QuestsTab extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
                   'DAILY QUESTS',

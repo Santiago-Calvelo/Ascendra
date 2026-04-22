@@ -304,8 +304,6 @@ class GameService {
 
   Map<String, int> addWorkoutEntry(String exerciseId, WorkoutEntry entry) {
     final ex = workout.exercises.firstWhere((e) => e.id == exerciseId);
-    final typeId = ex.type == 'strength' ? 'gym' : 'cardio';
-    final type = activityTypes.firstWhere((t) => t.id == typeId);
     
     workout.history.putIfAbsent(exerciseId, () => []).add(entry);
     
@@ -342,7 +340,7 @@ class GameService {
   void cancelFocus() { focus.cancel(); save(); }
 
   Future<void> addTask(String aid, {int target = 1}) async {
-    tasks.add(Task(id: DateTime.now().millisecondsSinceEpoch.toString(), activityId: aid, target: target));
+    tasks.add(Task(id: DateTime.now().millisecondsSinceEpoch.toString(), activityId: aid, target: target, createdAt: DateTime.now()));
     await save();
   }
 
@@ -379,6 +377,6 @@ class GameService {
       }
     });
     
-    if (msg != null) onMilestone?.call(msg);
+    if (msg != null) onMilestone?.call(msg!);
   }
 }

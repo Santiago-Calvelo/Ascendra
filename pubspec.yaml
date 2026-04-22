@@ -13,6 +13,7 @@ dependencies:
   flutter_local_notifications: ^17.1.2
   timezone: ^0.9.4
   flutter_timezone: ^2.0.0
+  flutter_svg: ^2.0.10
 
 dev_dependencies:
   flutter_test:
@@ -21,3 +22,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/body.svg
+    - assets/icons/mind.svg
+    - assets/icons/soul.svg
+    - assets/icons/check.svg

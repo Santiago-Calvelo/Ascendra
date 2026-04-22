@@ -66,7 +66,6 @@ class SocialService {
     final userIndex = board.indexWhere((e) => e.isUser);
     return userIndex > 0 ? board[userIndex - 1] : null;
   }
-}
   /// Simple challenge progress update
   void onActivity(String metric, int amount) {
     for (var c in activeChallenges) {

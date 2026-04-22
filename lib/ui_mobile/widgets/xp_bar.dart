@@ -24,7 +24,7 @@ class XPBar extends StatelessWidget {
       children: [
         if (showLabel) ...[
           Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
                 'Progress',

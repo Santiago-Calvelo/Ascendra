@@ -63,9 +63,9 @@ class _RoutineBuilderScreenState extends State<RoutineBuilderScreen> {
         margin: const EdgeInsets.only(top: 8),
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: GameTheme.cardBg.withOpacity(0.5),
+          color: GameTheme.cardBg.withValues(alpha: 0.5),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: GameTheme.primary.withOpacity(0.3), style: BorderStyle.solid),
+          border: Border.all(color: GameTheme.primary.withValues(alpha: 0.3), style: BorderStyle.solid),
         ),
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,

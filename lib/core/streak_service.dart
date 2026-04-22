@@ -6,6 +6,8 @@ class StreakService {
   int dailyTasksCompleted = 0;
   final Map<String, int> dailyStatGains = {};
   DateTime? lastCompletedDate;
+  int streakFreezes = 1;
+  DateTime? lastFreezeReset;
 
   /// Essential Momentum: Are we in a streak or starting over?
   bool get isReturning => currentStreak == 0 && lastCompletedDate != null;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/game_theme.dart';
 
-enum GameTab { quests, character, arena, feats }
+enum GameTab { quests, character, gym, feats }
 
 class GameBottomNav extends StatelessWidget {
   final GameTab activeTab;
@@ -28,7 +28,7 @@ class GameBottomNav extends StatelessWidget {
         children: [
           _buildNavItem(GameTab.quests, Icons.history_edu, 'Quests'),
           _buildNavItem(GameTab.character, Icons.person, 'Character'),
-          _buildNavItem(GameTab.arena, Icons.emoji_events, 'Arena'),
+          _buildNavItem(GameTab.gym, Icons.fitness_center, 'Gym'),
           _buildNavItem(GameTab.feats, Icons.workspace_premium, 'Feats'),
         ],
       ),
